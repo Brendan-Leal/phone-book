@@ -2,7 +2,6 @@ const cors = require("cors");
 const express = require("express");
 const morgan = require("morgan");
 const app = express();
-const PORT = 3002;
 
 app.use(cors());
 app.use(express.json());
@@ -109,6 +108,7 @@ app.post("/api/persons", (req, res) => {
   res.json(person);
 });
 
+const PORT = process.env.PORT || 3002;
 app.listen(PORT, () => {
   console.log(`Phonebook is listening on ${PORT}`);
 });
